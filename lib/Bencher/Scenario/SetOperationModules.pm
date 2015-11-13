@@ -120,6 +120,14 @@ our $scenario = {
                 set2 => [2..101],
             },
         },
+        {
+            name => 'num1000',
+            args => {
+                set1 => [1..1000],
+                set2 => [2..1001],
+            },
+            include_by_default => 0,
+        },
     ],
 };
 
