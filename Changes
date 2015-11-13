@@ -1,5 +1,10 @@
 Revision history for Bencher-Scenario-SetOperationModules
 
+0.04    2015-11-13 (PERLANCAR)
+
+	- Add dataset: num1000 (not included by default).
+
+
 0.03    2015-11-13 (PERLANCAR)
 
 	- Add dataset: num100.
