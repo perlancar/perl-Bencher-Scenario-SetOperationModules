@@ -32,6 +32,10 @@ our $scenario = {
             module => 'List::MoreUtils::XS',
             fcall_template => 'List::MoreUtils::uniq(@{<set1>}, @{<set2>})',
         },
+        {
+            tags => ['op:union'],
+            fcall_template => 'Array::Set::set_union(<set1>, <set2>)',
+        },
 
         {
             tags => ['op:symdiff'],
@@ -58,6 +62,10 @@ our $scenario = {
             module => 'List::MoreUtils::XS',
             fcall_template => 'List::MoreUtils::singleton(@{<set1>}, @{<set2>})',
         },
+        {
+            tags => ['op:symdiff'],
+            fcall_template => 'Array::Set::set_symdiff(<set1>, <set2>)',
+        },
 
         {
             tags => ['op:diff'],
@@ -70,6 +78,10 @@ our $scenario = {
             module => 'Set::Scalar',
             function => 'difference',
             code_template => 'my $s1 = Set::Scalar->new(@{<set1>}); my $s2 = Set::Scalar->new(@{<set2>}); $s1->difference($s2)',
+        },
+        {
+            tags => ['op:diff'],
+            fcall_template => 'Array::Set::set_diff(<set1>, <set2>)',
         },
 
         {
@@ -86,6 +98,10 @@ our $scenario = {
         },
         # there's no opposite for singleton() yet in List::MoreUtils (as of
         # v0.413).
+        {
+            tags => ['op:intersect'],
+            fcall_template => 'Array::Set::set_intersect(<set1>, <set2>)',
+        },
     ],
 
     # XXX: add more datasets (larger data, etc)
