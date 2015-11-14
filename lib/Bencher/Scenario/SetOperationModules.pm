@@ -5,7 +5,6 @@ package Bencher::Scenario::SetOperationModules;
 
 use 5.010001;
 use strict;
-use utf8;
 use warnings;
 
 our $scenario = {
