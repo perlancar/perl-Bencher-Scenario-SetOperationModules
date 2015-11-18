@@ -1,5 +1,13 @@
 Revision history for Bencher-Scenario-SetOperationModules
 
+0.05    2015-11-18 (PERLANCAR)
+
+	- Add participants: Set::Array, Array::AsObject, Set::Object,
+	  Set::Tiny.
+
+	- [doc] Mention Benchmark::Featureset::SetOps [GH#1].
+
+
 0.04    2015-11-13 (PERLANCAR)
 
 	- Add dataset: num1000 (not included by default).
