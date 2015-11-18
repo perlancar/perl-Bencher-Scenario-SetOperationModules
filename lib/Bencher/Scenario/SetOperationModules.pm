@@ -136,3 +136,8 @@ our $scenario = {
 =head1 SYNOPSIS
 
  % bencher -m SetOperationModules [other options]...
+
+
+=head1 SEE ALSO
+
+L<Benchmark::Featureset::SetOps>
