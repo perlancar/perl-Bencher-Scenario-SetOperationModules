@@ -9,6 +9,7 @@ use warnings;
 
 our $scenario = {
     participants => [
+        # UNION
         {
             tags => ['op:union'],
             module => 'Array::Utils',
@@ -35,7 +36,32 @@ our $scenario = {
             tags => ['op:union'],
             fcall_template => 'Array::Set::set_union(<set1>, <set2>)',
         },
+        {
+            tags => ['op:union'],
+            module => 'Set::Array',
+            function => 'union',
+            code_template => 'my $s1 = Set::Array->new(@{<set1>}); my $s2 = Set::Array->new(@{<set2>}); $s1->union($s2)',
+        },
+        {
+            tags => ['op:union'],
+            module => 'Array::AsObject',
+            function => 'union',
+            code_template => 'my $s1 = Array::AsObject->new(@{<set1>}); my $s2 = Array::AsObject->new(@{<set2>}); $s1->union($s2, 1)',
+        },
+        {
+            tags => ['op:union'],
+            module => 'Set::Object',
+            function => 'union',
+            code_template => 'my $s1 = Set::Object->new(@{<set1>}); my $s2 = Set::Object->new(@{<set2>}); $s1->union($s2)',
+        },
+        {
+            tags => ['op:union'],
+            module => 'Set::Tiny',
+            function => 'union',
+            code_template => 'my $s1 = Set::Tiny->new(@{<set1>}); my $s2 = Set::Tiny->new(@{<set2>}); $s1->union($s2)',
+        },
 
+        # SYMDIFF
         {
             tags => ['op:symdiff'],
             module => 'Array::Utils',
@@ -65,7 +91,34 @@ our $scenario = {
             tags => ['op:symdiff'],
             fcall_template => 'Array::Set::set_symdiff(<set1>, <set2>)',
         },
+        {
+            tags => ['op:symdiff'],
+            module => 'Set::Array',
+            function => 'symmetric_difference',
+            code_template => 'my $s1 = Set::Array->new(@{<set1>}); my $s2 = Set::Array->new(@{<set2>}); $s1->symmetric_difference($s2)',
+        },
+        # Array::AsObject::symmetric_difference's handling of duplicates is
+        # non-standard though, see its doc
+        {
+            tags => ['op:symdiff'],
+            module => 'Array::AsObject',
+            function => 'symmetric_difference',
+            code_template => 'my $s1 = Array::AsObject->new(@{<set1>}); my $s2 = Array::AsObject->new(@{<set2>}); $s1->symmetric_difference($s2)',
+        },
+        {
+            tags => ['op:symdiff'],
+            module => 'Set::Object',
+            function => 'symmetric_difference',
+            code_template => 'my $s1 = Set::Object->new(@{<set1>}); my $s2 = Set::Object->new(@{<set2>}); $s1->symmetric_difference($s2)',
+        },
+        {
+            tags => ['op:symdiff'],
+            module => 'Set::Tiny',
+            function => 'symmetric_difference',
+            code_template => 'my $s1 = Set::Tiny->new(@{<set1>}); my $s2 = Set::Tiny->new(@{<set2>}); $s1->symmetric_difference($s2)',
+        },
 
+        # DIFF
         {
             tags => ['op:diff'],
             module => 'Array::Utils',
@@ -82,7 +135,34 @@ our $scenario = {
             tags => ['op:diff'],
             fcall_template => 'Array::Set::set_diff(<set1>, <set2>)',
         },
+        {
+            tags => ['op:diff'],
+            module => 'Set::Array',
+            function => 'difference',
+            code_template => 'my $s1 = Set::Array->new(@{<set1>}); my $s2 = Set::Array->new(@{<set2>}); $s1->difference($s2)',
+        },
+        # Array::AsObject::difference's handling of duplicates is non-standard
+        # though, see its doc
+        {
+            tags => ['op:diff'],
+            module => 'Array::AsObject',
+            function => 'difference',
+            code_template => 'my $s1 = Array::AsObject->new(@{<set1>}); my $s2 = Array::AsObject->new(@{<set2>}); $s1->difference($s2)',
+        },
+        {
+            tags => ['op:diff'],
+            module => 'Set::Object',
+            function => 'difference',
+            code_template => 'my $s1 = Set::Object->new(@{<set1>}); my $s2 = Set::Object->new(@{<set2>}); $s1->difference($s2)',
+        },
+        {
+            tags => ['op:diff'],
+            module => 'Set::Tiny',
+            function => 'difference',
+            code_template => 'my $s1 = Set::Tiny->new(@{<set1>}); my $s2 = Set::Tiny->new(@{<set2>}); $s1->difference($s2)',
+        },
 
+        # INTERSECT
         {
             tags => ['op:intersect'],
             module => 'Array::Utils',
@@ -100,6 +180,30 @@ our $scenario = {
         {
             tags => ['op:intersect'],
             fcall_template => 'Array::Set::set_intersect(<set1>, <set2>)',
+        },
+        {
+            tags => ['op:intersect'],
+            module => 'Set::Array',
+            function => 'intersection',
+            code_template => 'my $s1 = Set::Array->new(@{<set1>}); my $s2 = Set::Array->new(@{<set2>}); $s1->intersection($s2)',
+        },
+        {
+            tags => ['op:intersect'],
+            module => 'Array::AsObject',
+            function => 'intersection',
+            code_template => 'my $s1 = Array::AsObject->new(@{<set1>}); my $s2 = Array::AsObject->new(@{<set2>}); $s1->intersection($s2, 1)',
+        },
+        {
+            tags => ['op:intersect'],
+            module => 'Set::Object',
+            function => 'intersection',
+            code_template => 'my $s1 = Set::Object->new(@{<set1>}); my $s2 = Set::Object->new(@{<set2>}); $s1->intersection($s2)',
+        },
+        {
+            tags => ['op:intersect'],
+            module => 'Set::Tiny',
+            function => 'intersection',
+            code_template => 'my $s1 = Set::Tiny->new(@{<set1>}); my $s2 = Set::Tiny->new(@{<set2>}); $s1->intersection($s2)',
         },
     ],
 
@@ -141,3 +245,6 @@ our $scenario = {
 =head1 SEE ALSO
 
 L<Benchmark::Featureset::SetOps>
+
+Excluded modules: L<Set::Bag> (expects hashes instead of arrays),
+L<Set::SortedArray> (members are sorted).
