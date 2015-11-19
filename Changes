@@ -1,5 +1,12 @@
 Revision history for Bencher-Scenario-SetOperationModules
 
+0.06    2015-11-19 (PERLANCAR)
+
+        - [dist] Rebuild with DZP:Bencher::Scenario 0.02 (benchmarked modules
+          becomes RuntimeRequires prereqs instead of just RuntimeRecommends,
+          [Experimental] add t/bench-*.t to run benchmarks during testing.)
+
+
 0.05    2015-11-18 (PERLANCAR)
 
 	- Add participants: Set::Array, Array::AsObject, Set::Object,
