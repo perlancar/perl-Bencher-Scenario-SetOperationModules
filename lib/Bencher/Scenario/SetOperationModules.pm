@@ -10,7 +10,7 @@ use warnings;
 our $scenario = {
     modules => {
         'List::MoreUtils' => {
-            version => '0.47', # singleton() is available from this version
+            version => '0.407', # singleton() is available from this version
         },
     },
     participants => [
