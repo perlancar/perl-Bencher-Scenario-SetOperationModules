@@ -1,5 +1,11 @@
 Revision history for Bencher-Scenario-SetOperationModules
 
+0.07    2015-11-29 (PERLANCAR)
+
+	- Specify minimum version for List::MoreUtils (singleton() is
+	  available from 0.47).
+
+
 0.06    2015-11-19 (PERLANCAR)
 
         - [dist] Rebuild with DZP:Bencher::Scenario 0.02 (benchmarked modules
