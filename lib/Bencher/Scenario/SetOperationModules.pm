@@ -8,6 +8,7 @@ use strict;
 use warnings;
 
 our $scenario = {
+    summary => 'Benchmark Perl set operation (union, intersection, diff, symmetric diff) modules',
     modules => {
         'List::MoreUtils' => {
             version => '0.407', # singleton() is available from this version
@@ -240,12 +241,7 @@ our $scenario = {
 };
 
 1;
-# ABSTRACT: Benchmark Perl set operation (union, intersection, diff, symmetric diff) modules
-
-=head1 SYNOPSIS
-
- % bencher -m SetOperationModules [other options]...
-
+# ABSTRACT:
 
 =head1 SEE ALSO
 
