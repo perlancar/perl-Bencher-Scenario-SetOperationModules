@@ -66,6 +66,12 @@ our $scenario = {
             function => 'union',
             code_template => 'my $s1 = Set::Tiny->new(@{<set1>}); my $s2 = Set::Tiny->new(@{<set2>}); $s1->union($s2)',
         },
+        {
+            tags => ['op:union'],
+            module => 'List::Collection',
+            function => 'union',
+            code_template => '[List::Collection::union(<set1>, <set2>)]',
+        },
 
         # SYMDIFF
         {
@@ -123,6 +129,12 @@ our $scenario = {
             function => 'symmetric_difference',
             code_template => 'my $s1 = Set::Tiny->new(@{<set1>}); my $s2 = Set::Tiny->new(@{<set2>}); $s1->symmetric_difference($s2)',
         },
+        {
+            tags => ['op:symdiff'],
+            module => 'List::Collection',
+            function => 'complement',
+            code_template => '[List::Collection::complement(<set1>, <set2>)]',
+        },
 
         # DIFF
         {
@@ -167,6 +179,12 @@ our $scenario = {
             function => 'difference',
             code_template => 'my $s1 = Set::Tiny->new(@{<set1>}); my $s2 = Set::Tiny->new(@{<set2>}); $s1->difference($s2)',
         },
+        {
+            tags => ['op:diff'],
+            module => 'List::Collection',
+            function => 'subtract',
+            code_template => '[List::Collection::subtract(<set1>, <set2>)]',
+        },
 
         # INTERSECT
         {
@@ -210,6 +228,12 @@ our $scenario = {
             module => 'Set::Tiny',
             function => 'intersection',
             code_template => 'my $s1 = Set::Tiny->new(@{<set1>}); my $s2 = Set::Tiny->new(@{<set2>}); $s1->intersection($s2)',
+        },
+        {
+            tags => ['op:intersect'],
+            module => 'List::Collection',
+            function => 'intersect',
+            code_template => '[List::Collection::intersect(<set1>, <set2>)]',
         },
     ],
 
