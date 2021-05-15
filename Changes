@@ -1,3 +1,8 @@
+0.130   2021-05-15  Released-By: PERLANCAR; Urgency: medium
+
+	- Add participant: Array::Set::Naive.
+
+
 0.12    2017-02-19  Released-By: PERLANCAR
 
 	- No functional changes.
