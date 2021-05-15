@@ -44,6 +44,10 @@ our $scenario = {
         },
         {
             tags => ['op:union'],
+            fcall_template => 'Array::Set::Naive::set_union(<set1>, <set2>)',
+        },
+        {
+            tags => ['op:union'],
             module => 'Set::Array',
             function => 'union',
             code_template => 'my $s1 = Set::Array->new(@{<set1>}); my $s2 = Set::Array->new(@{<set2>}); $s1->union($s2)',
@@ -105,6 +109,10 @@ our $scenario = {
         },
         {
             tags => ['op:symdiff'],
+            fcall_template => 'Array::Set::Naive::set_symdiff(<set1>, <set2>)',
+        },
+        {
+            tags => ['op:symdiff'],
             module => 'Set::Array',
             function => 'symmetric_difference',
             code_template => 'my $s1 = Set::Array->new(@{<set1>}); my $s2 = Set::Array->new(@{<set2>}); $s1->symmetric_difference($s2)',
@@ -152,6 +160,10 @@ our $scenario = {
         {
             tags => ['op:diff'],
             fcall_template => 'Array::Set::set_diff(<set1>, <set2>)',
+        },
+        {
+            tags => ['op:diff'],
+            fcall_template => 'Array::Set::Naive::set_diff(<set1>, <set2>)',
         },
         {
             tags => ['op:diff'],
@@ -204,6 +216,10 @@ our $scenario = {
         {
             tags => ['op:intersect'],
             fcall_template => 'Array::Set::set_intersect(<set1>, <set2>)',
+        },
+        {
+            tags => ['op:intersect'],
+            fcall_template => 'Array::Set::Naive::set_intersect(<set1>, <set2>)',
         },
         {
             tags => ['op:intersect'],
